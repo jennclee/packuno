@@ -12,7 +12,7 @@ export class AppContainer extends React.Component {
     console.log('this.props in app component', this.props);
     if (this.props.isLoggedIn) {
       return (
-       <div></div>
+        <div></div>
       );
     }
     return (
