@@ -15,7 +15,7 @@ class InfoPopover extends React.Component {
       open: false,
       anchorEl: null,
       anchorOriginVertical: 'bottom',
-      anchorOriginHorizontal: 'center',
+      anchorOriginHorizontal: 'right',
       transformOriginVertical: 'top',
       transformOriginHorizontal: 'center',
       positionTop: 200, // Just so the popover can be spotted more easily
@@ -28,25 +28,26 @@ class InfoPopover extends React.Component {
 
   handleClickButton = (categoryObj) => {
     console.log('category list: ', categories.data);
-    // let tempCatDes;
-    // categories.data.map( (category) => {
-    //   console.log('category list name: ', category.name, categoryObj.category);
-    //   // console.log('selected category: ', categoryObj);
-    //   console.log(category.name === categoryObj.category);
+    let tempCatDes;
+    categories.data.map( (category) => {
+      console.log('category list name: ', category.name, categoryObj.category);
+      // console.log('selected category: ', categoryObj);
+      console.log(category.name === categoryObj.category);
 
-    //   // if (category.name === categoryObj.category){
-    //   //   console.log(category.name, cateogryObj.category);
-    //   // }
-    //   if (category.name === categoryObj.category ) {
-    //     console.log('category matched');
-    //     tempCatDes = category.description; 
-    //   }
-    // });
-    // this.setState({
-    //   open: true,
-    //   anchorEl: findDOMNode(this.state.button),
-    //   description: tempCatDes,
-    // });
+      // if (category.name === categoryObj.category){
+      //   console.log(category.name, cateogryObj.category);
+      // }
+      if (category.name === categoryObj.category ) {
+        console.log('category matched');
+        tempCatDes = category.description; 
+      }
+    });
+    console.log('tempCatDes: ', tempCatDes)
+    this.setState({
+      open: true,
+      anchorEl: findDOMNode(this.state.button),
+      description: tempCatDes,
+    });
   };
 
   handleRequestClose = () => {
@@ -70,20 +71,20 @@ class InfoPopover extends React.Component {
       anchorReference,
       button,
     } = this.state;
-    const { categoryObj } = this.props;
+    const { category } = this.props;
 
     // const category = categoryObj.category;
     return (
       <div>
         <IconButton 
-          onClick={() => this.handleClickButton({ categoryObj })}
+          onClick={() => this.handleClickButton({ category })}
           ref={ node => {
             this.state.button = node;
           }}
         >
           <InfoIcon />
         </IconButton>
-        {/* <Popover
+        <Popover
           open={open}
           anchorEl={anchorEl}
           anchorReference={anchorReference}
@@ -99,7 +100,7 @@ class InfoPopover extends React.Component {
           }}
         >
           <Typography>{description}</Typography>
-        </Popover> */}
+        </Popover>
       </div>
     );
   }

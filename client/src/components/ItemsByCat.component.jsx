@@ -7,15 +7,18 @@ import Checkbox from 'material-ui/Checkbox';
 import IconButton from 'material-ui/IconButton';
 import DeleteIcon from 'material-ui-icons/Delete';
 import EditIcon from 'material-ui-icons/Edit';
+import InfoPopover from './InfoPopover.component';
 
 const ItemsByCat = ({ items, category, onItemClick, onDeleteClick, onEditClick, classes }) => {
 
   const catItems = items.filter(item => item.category === category);
 
   if (catItems.length > 0) {
+    console.log(category);
     return (
       <div>
         <ListSubheader disableSticky={true} >{category}</ListSubheader>
+        <InfoPopover category={category} />
         {catItems.map(item => (
           <ListItem
             key={item.id}
@@ -31,7 +34,7 @@ const ItemsByCat = ({ items, category, onItemClick, onDeleteClick, onEditClick, 
             />
             <ListItemText primary={(item.quantity) ? `${item.quantity} ${item.item}` : item.item} />
             <ListItemSecondaryAction >
-            <IconButton
+              <IconButton
                 aria-label="Edit"
                 onClick={() => onEditClick(item.id)}
               >
@@ -45,7 +48,7 @@ const ItemsByCat = ({ items, category, onItemClick, onDeleteClick, onEditClick, 
               </IconButton>
             </ListItemSecondaryAction>
           </ListItem>
-          ))}
+        ))}
       </div>
     );
   }

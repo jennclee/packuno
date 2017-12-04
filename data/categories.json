@@ -18,12 +18,12 @@
     {
       "id": 4,
       "name": "Electronics",
-      "description": ""
+      "description": "Cell phones (except for the Samsung Galaxy Note 7), tablets, laptops, digital cameras, dry batteries are allowed in carry-on and checked baggage. Electronic cigarettes and vaping devices are only allowed in carry-on bags. See  https://www.tsa.gov/travel/security-screening/whatcanibring for more info."
     },
     {
       "id": 5,
       "name": "Gifts",
-      "description": ""
+      "description": "Packaged and fresh food are allowed as carry-on items, as well as in a checked-in bag. Alcoholic beverages are allowed if they are no more than 70% alcohol, and for carry-on bags, less than 3.4oz/100mL in volume. Replica weapons are subject to special instructions. See https://www.tsa.gov/travel/security-screening/whatcanibring for more info."
     },
     {
       "id": 6,
@@ -33,12 +33,12 @@
     {
       "id": 7,
       "name": "Toiletries",
-      "description": ""
+      "description": "Liquids, gels and aerosols packed in a carry-on must follow the 3-1-1 liquids rule: 3.4 ounces or less per container, 1 quart size, clear, plastic, zip top bag (all liquids must fit in bag), and 1 bag per passenger. See https://www.tsa.gov/travel/security-screening/whatcanibring for more info."
     },
     {
       "id": 8,
       "name": "Miscellaneous",
-      "description": ""
+      "description": "Firearms can be in a checked bag, but are subject to special instructions. Most sharp items are prohibited from being in a carry-on bag. See https://www.tsa.gov/travel/security-screening/whatcanibring for more info."
     }
   ]
 }
