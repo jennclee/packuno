@@ -7,10 +7,16 @@ import Footer from '../components/Footer.component';
 import AddItem from '../containers/AddItem.container';
 import VisibleItemList from '../containers/VisibleItemList.container';
 import WeatherCont from '../containers/Weather.container';
+<<<<<<< HEAD
 import CurrentTrip from '../containers/CurrentTrip.container';
 import Vaccines from '../containers/Vaccines.container';
 import VisaInfo from '../containers/VisaInfo.container';
 import Grid from 'material-ui/Grid';
+=======
+import VisaInfo from '../containers/VisaInfo.container';
+import CurrentTrip from '../containers/CurrentTrip.container';
+
+>>>>>>> Add popover content
 
 const styles = theme => ({
   root: theme.mixins.gutters({
@@ -23,9 +29,7 @@ const styles = theme => ({
 
 
 const Trip = (props) => {
-
   const { classes } = props;
-
   return (
   <div>
     <Paper className={classes.root} elevation={4}>

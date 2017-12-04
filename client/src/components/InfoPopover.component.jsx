@@ -21,32 +21,32 @@ class InfoPopover extends React.Component {
       positionTop: 200, // Just so the popover can be spotted more easily
       positionLeft: 400, // Same as above
       anchorReference: 'anchorEl',
+      button: null,
     };
   }
   
-  button = null;
 
   handleClickButton = (categoryObj) => {
     console.log('category list: ', categories.data);
-    let tempCatDes;
-    categories.data.map( (category) => {
-      console.log('category list name: ', category.name, categoryObj.category);
-      // console.log('selected category: ', categoryObj);
-      console.log(category.name === categoryObj.category);
+    // let tempCatDes;
+    // categories.data.map( (category) => {
+    //   console.log('category list name: ', category.name, categoryObj.category);
+    //   // console.log('selected category: ', categoryObj);
+    //   console.log(category.name === categoryObj.category);
 
-      // if (category.name === categoryObj.category){
-      //   console.log(category.name, cateogryObj.category);
-      // }
-      if (category.name === categoryObj.category ) {
-        console.log('category matched');
-        tempCatDes = category.description; 
-      }
-    });
-    this.setState({
-      open: true,
-      anchorEl: findDOMNode(this.state.button),
-      description: tempCatDes,
-    });
+    //   // if (category.name === categoryObj.category){
+    //   //   console.log(category.name, cateogryObj.category);
+    //   // }
+    //   if (category.name === categoryObj.category ) {
+    //     console.log('category matched');
+    //     tempCatDes = category.description; 
+    //   }
+    // });
+    // this.setState({
+    //   open: true,
+    //   anchorEl: findDOMNode(this.state.button),
+    //   description: tempCatDes,
+    // });
   };
 
   handleRequestClose = () => {
@@ -68,20 +68,22 @@ class InfoPopover extends React.Component {
       positionTop,
       positionLeft,
       anchorReference,
+      button,
     } = this.state;
-    const { category } = this.props;
+    const { categoryObj } = this.props;
 
+    // const category = categoryObj.category;
     return (
       <div>
         <IconButton 
-          onClick={this.handleClickButton({ category })}
+          onClick={() => this.handleClickButton({ categoryObj })}
           ref={ node => {
             this.state.button = node;
           }}
         >
           <InfoIcon />
         </IconButton>
-        <Popover
+        {/* <Popover
           open={open}
           anchorEl={anchorEl}
           anchorReference={anchorReference}
@@ -97,7 +99,7 @@ class InfoPopover extends React.Component {
           }}
         >
           <Typography>{description}</Typography>
-        </Popover>
+        </Popover> */}
       </div>
     );
   }
